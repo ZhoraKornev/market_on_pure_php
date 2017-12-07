@@ -36,15 +36,22 @@ private function getURI()
 
     //receive get
     $uri = $this->getURI();
-        echo $uri;
+    //echo $uri;
 
     //chek if exist in routes
-
         foreach ($this->routes as $uriPattern =>$path)
         {
             if (preg_match("~$uriPattern~", $uri))
             {
-                echo "exist";
+                //chek action for request
+                $segments = explode('/',$path);
+                print_r($segments);
+                $controllerName = array_shift($segments).'Controller';
+                $actionName = 'action'.ucfirst(array_shift($segments));
+
+                echo $controllerName;
+                echo $actionName;
+
             }
         }
 
