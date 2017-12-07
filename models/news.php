@@ -37,7 +37,8 @@ class news {
         catch (PDOException $e)
         {
             print "Error!: " . $e->getMessage() . "<br/>";
-            die();
+            ROOT.'/function/'.errorPage;
+            //die();
         }
 
 
