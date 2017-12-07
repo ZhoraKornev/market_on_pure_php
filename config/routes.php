@@ -6,5 +6,6 @@
  */
 return array(
     'news' =>'news/index',
-    'products' => 'product/list'
+    'products' => 'product/list',
+    'articles' => 'articles/list'
 );

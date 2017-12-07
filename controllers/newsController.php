@@ -7,7 +7,8 @@
  */
 
 class newsController {
-    public function actionList() {
+    public function actionIndex() {
+        echo 'newsController actionIndex';
         return true;
     }
 }

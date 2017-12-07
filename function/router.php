@@ -45,9 +45,26 @@ private function getURI()
             {
                 //chek action for request
                 $segments = explode('/',$path);
-                print_r($segments);
+                //print_r($segments);
                 $controllerName = array_shift($segments).'Controller';
                 $actionName = 'action'.ucfirst(array_shift($segments));
+
+                $controllerFile = ROOT.'/controllers/'.$controllerName.'.php';
+
+                if (file_exists($controllerFile))
+                {
+                    include_once ($controllerFile);
+                }
+
+                //create object class controller
+                $controllerObject = new $controllerName;
+                $result = $controllerObject->$actionName();
+                if ($result != null)
+                {
+                    break;
+                }
+
+
 
                 echo $controllerName;
                 echo $actionName;
