@@ -43,11 +43,15 @@ private function getURI()
         {
             if (preg_match("~$uriPattern~", $uri))
             {
-                //chek action for request
-                $segments = explode('/',$path);
-                //print_r($segments);
+                //create inner way from global with pattern
+                $internalRoute = preg_replace("~$uriPattern~",$path,$uri);
+
+                //check action for request
+                $segments = explode('/',$internalRoute);
                 $controllerName = array_shift($segments).'Controller';
                 $actionName = 'action'.ucfirst(array_shift($segments));
+                $parameters = $segments;
+                //print_r($parameters);
 
                 $controllerFile = ROOT.'/controllers/'.$controllerName.'.php';
 
@@ -58,7 +62,7 @@ private function getURI()
 
                 //create object class controller
                 $controllerObject = new $controllerName;
-                $result = $controllerObject->$actionName();
+                $result = call_user_func_array(array($controllerObject,$actionName),$parameters);
                 if ($result != null)
                 {
                     break;
@@ -66,8 +70,6 @@ private function getURI()
 
 
 
-                echo $controllerName;
-                echo $actionName;
 
             }
         }

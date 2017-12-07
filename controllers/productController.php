@@ -11,4 +11,9 @@ class productController {
         return true;
     }
 
+    public function actionView()
+    {
+
+    }
+
 }
