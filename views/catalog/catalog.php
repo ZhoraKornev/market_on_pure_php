@@ -11,7 +11,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a href="/category/<?php echo $categoryItem['id'];?>">
+                                        <a href="/alias/c<?php echo $categoryItem['id'];?>">
                                             <?php echo $categoryItem['name'];?>
                                         </a>
                                     </h4>
@@ -31,17 +31,17 @@
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="/template/images/home/product1.jpg" alt="" />
+                                        <img src="/assets/img/home/product1.jpg" alt="" />
                                         <h2><?php echo $product['price'];?>$</h2>
                                         <p>
-                                            <a href="/product/<?php echo $product['id'];?>">
+                                            <a href="/alias/p<?php echo $product['id'];?>">
                                                 <?php echo $product['tittle'];?>
                                             </a>
                                         </p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
                                     </div>
                                     <?php if ($product['is_new']): ?>
-                                        <img src="/template/images/home/new.png" class="new" alt="" />
+                                        <img src="/assets/img/home/new.png" class="new" alt="" />
                                     <?php endif; ?>
                                 </div>
                             </div>

@@ -4,9 +4,7 @@
  * Date: 08.12.2017
  * Time: 14:10
  */
-include_once ROOT . '/models/category.php';
-include_once ROOT . '/models/product.php';
-include_once ROOT . '/function/pagination.php';
+require_once(ROOT.'/function/Autoload.php');
 
 class catalogController {
     public function actionIndex()
@@ -34,6 +32,7 @@ class catalogController {
 
         // Создаем объект Pagination - постраничная навигация
         $pagination = new pagination($total, $page, product::SHOW_BY_DEFAULT, 'page-');
+
 
         require_once(ROOT . '/views/catalog/category.php');
 

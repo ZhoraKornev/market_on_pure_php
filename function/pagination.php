@@ -4,10 +4,11 @@
  * Created by PhpStorm.
  * Date: 08.12.2017
  * Time: 15:58
+ * Класс для генерации постраничной навигации
  */
 
-
-class pagination {
+class pagination
+{
 
     /**
      *
@@ -136,7 +137,7 @@ class pagination {
     /**
      *  Для получения, откуда стартовать
      *
-     * @return массив с началом и концом отсчёта
+     * @return array с началом и концом отсчёта
      */
     private function limits()
     {
@@ -187,14 +188,13 @@ class pagination {
     /**
      * Для получеия общего числа страниц
      *
-     * @return число страниц
+     * @return
      */
     private function amount()
     {
         # Делим и возвращаем
-        $tmpVar = round($this->total/$this->limit);
-        return $tmpVar;
+        echo (round($this->total / $this->limit));
+        return round($this->total / $this->limit);
     }
-
 
 }

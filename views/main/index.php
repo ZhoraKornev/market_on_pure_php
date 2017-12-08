@@ -13,7 +13,7 @@ include ROOT.'/views/layouts/header.php'?>
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <h4 class="panel-title">
-                                                <a href="/category/<?php echo $category['id']; ?>">
+                                                <a href="/alias/c<?php echo $category['id']; ?>">
                                                     <?php echo $category['name']; ?>
                                                 </a></h4>
                                         </div>
@@ -41,7 +41,7 @@ include ROOT.'/views/layouts/header.php'?>
                                                 <h2>$<?php echo $product['price'];?></h2>
                                             <?php endif; ?>
                                             <p>
-                                                <a href="/product/<?php echo $product['id'];?>">
+                                                <a href="/alias/p<?php echo $product['id'];?>">
                                                     <?php echo $product['tittle'];?>
                                                 </a>
                                             </p>

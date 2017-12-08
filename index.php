@@ -7,11 +7,9 @@ ini_set('display_errors',1);
 error_reporting(E_ALL);
 
 
-// 2. РџРѕРґРєР»СЋС‡РµРЅРёРµ С„Р°Р№Р»РѕРІ СЃРёСЃС‚РµРјС‹
+// Подключение файлов системы
 define('ROOT', dirname(__FILE__));
-require_once(ROOT.'/function/router.php');
-require_once(ROOT.'/function/db.php');
-
+require_once(ROOT.'/function/Autoload.php');
 
 // 4. Р’С‹Р·РѕРІ Router
 $router = new Router();
