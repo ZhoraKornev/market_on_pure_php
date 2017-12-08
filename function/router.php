@@ -48,10 +48,11 @@ private function getURI()
 
                 //check action for request
                 $segments = explode('/',$internalRoute);
+                print_r($segments);
                 $controllerName = array_shift($segments).'Controller';
                 $actionName = 'action'.ucfirst(array_shift($segments));
                 $parameters = $segments;
-                //print_r($parameters);
+                print_r($parameters);
 
                 $controllerFile = ROOT.'/controllers/'.$controllerName.'.php';
 
