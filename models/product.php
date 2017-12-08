@@ -1,6 +1,7 @@
 <?php
 /** * Created by PhpStorm.* Date: 08.12.2017* Time: 11:09*/
 include_once ROOT .'/function/db.php';
+
 class product {
 
     const SHOW_BY_DEFAULT = 1;
@@ -14,7 +15,7 @@ class product {
         $db = db::getConnection();
         $productsList = array();
 
-        $result = $db->query('SELECT id, tittle, price, image,price_new, is_new FROM products WHERE status = "1" ORDER BY id DESC LIMIT '.$count);
+        $result = $db->query('SELECT id,tittle,image,price,price_new,is_new FROM products WHERE status = "1" ORDER BY id DESC LIMIT '.$count);
 
         $i = 0;
         while ($row = $result->fetch()) {
