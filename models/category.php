@@ -4,7 +4,7 @@
  * Date: 08.12.2017
  * Time: 10:35
  */
-
+include_once ROOT .'/function/db.php';
 class category {
 
     /**
