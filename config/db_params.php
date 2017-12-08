@@ -2,9 +2,9 @@
 
 return array(
 			'host' => 'localhost',  #Хост
-			'dbname' => 'catalog',  #Логин
-			'user' => 'webuser',    #Пароль
-			'password' => '123',    #Имя базы
+			'dbname' => 'catalog',  #Имя базы
+			'user' => 'webuser',    #Логин
+			'password' => '123',    #Пароль
 );
 
 /*$host="localhost";

@@ -67,13 +67,7 @@ private function getURI()
                 {
                     break;
                 }
-
-
-
-
             }
         }
-
-
     }
 }
