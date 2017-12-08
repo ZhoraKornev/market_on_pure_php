@@ -12,6 +12,7 @@ class db
 
         try        {
         $db = new PDO($dsn, $params['user'], $params['password']);
+        //$db->exec("set names utf8"); - раскоментировать если будут иероглифы на сайте
         return $db;
         }
         catch (PDOException $e)
