@@ -33,7 +33,7 @@ class catalogController {
         $total = product::getTotalProductsInCategory($categoryId);
 
         // Создаем объект Pagination - постраничная навигация
-        $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page-');
+        $pagination = new pagination($total, $page, product::SHOW_BY_DEFAULT, 'page-');
 
         require_once(ROOT . '/views/catalog/category.php');
 

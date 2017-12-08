@@ -83,10 +83,11 @@ class product {
     }
 
 
-    public function getTotalProductsInCategory($categoryId) {
+    public static function getTotalProductsInCategory($categoryId) {
         $db = db::getConnection();
 
-        $result = $db->query('SELECT count(id) AS COUNT FROM products WHERE status = "1" AND category_id=' . $categoryId.'"');
+        $result = $db->query('SELECT count(id) AS count FROM products '
+            . 'WHERE status="1" AND category_id ="'.$categoryId.'"');
         $result->setFetchMode(PDO::FETCH_ASSOC );
 
         return $result->fetch();

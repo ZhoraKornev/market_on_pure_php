@@ -192,7 +192,8 @@ class pagination {
     private function amount()
     {
         # Делим и возвращаем
-        return round($this->total / $this->limit);
+        $tmpVar = round($this->total/$this->limit);
+        return $tmpVar;
     }
 
 
