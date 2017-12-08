@@ -8,7 +8,7 @@
 
 class product {
 
-    const SHOW_BY_DEFAULT = 10;
+    const SHOW_BY_DEFAULT = 1;
 
     /**
      * Returns an array of products
@@ -38,16 +38,20 @@ class product {
     /**
      * Returns an array of products
      */
-    public static function getProductsListByCategory($categoryId = false)
+    public static function getProductsListByCategory($categoryId = false, $page = 1)
     {
         if ($categoryId) {
 
-            $db = db::getConnection();
+            $page = intval($page);
+            $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
+
+            $db = Db::getConnection();
             $products = array();
-            $result = $db->query("SELECT id, tittle, price,price_new, image, is_new FROM products "
+            $result = $db->query("SELECT id, tittle, price, price_new, image, is_new FROM products "
                 . "WHERE status = '1' AND category_id = '$categoryId' "
-                . "ORDER BY id DESC "
-                . "LIMIT ".self::SHOW_BY_DEFAULT);
+                . "ORDER BY id ASC "
+                . "LIMIT ".self::SHOW_BY_DEFAULT
+                . ' OFFSET '. $offset);
 
             $i = 0;
             while ($row = $result->fetch()) {
@@ -55,7 +59,7 @@ class product {
                 $products[$i]['tittle'] = $row['tittle'];
                 $products[$i]['image'] = $row['image'];
                 $products[$i]['price'] = $row['price'];
-                $productsList[$i]['price_new'] = $row['price_new'];
+                $products[$i]['price_new'] = $row['price_new'];
                 $products[$i]['is_new'] = $row['is_new'];
                 $i++;
             }
@@ -81,6 +85,17 @@ class product {
             return $result->fetch();
         }
     }
+
+
+    public function getTotalProductsInCategory($categoryId) {
+        $db = db::getConnection();
+
+        $result = $db->query('SELECT count(id) AS COUNT FROM products WHERE status = "1" AND category_id=' . $categoryId.'"');
+        $result->setFetchMode(PDO::FETCH_ASSOC );
+
+        return $result->fetch();
+}
+
 
 
 

@@ -6,6 +6,7 @@
  */
 include_once ROOT . '/models/category.php';
 include_once ROOT . '/models/product.php';
+include_once ROOT . '/function/pagination.php';
 
 class catalogController {
     public function actionIndex()
@@ -21,13 +22,18 @@ class catalogController {
         return true;
     }
 
-    public function actionCategory($categoryId)
+    public function actionCategory($categoryId, $page = 1)
     {
         $categories = array();
         $categories = category::getCategoriesList();
 
         $categoryProducts = array();
-        $categoryProducts = product::getProductsListByCategory($categoryId);
+        $categoryProducts = product::getProductsListByCategory($categoryId, $page);
+
+        $total = product::getTotalProductsInCategory($categoryId);
+
+        // Создаем объект Pagination - постраничная навигация
+        $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page-');
 
         require_once(ROOT . '/views/catalog/category.php');
 
