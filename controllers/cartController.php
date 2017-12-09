@@ -62,7 +62,7 @@ class cartController
 
         // Список категорий для левого меню
         $categories = array();
-        $categories = Category::getCategoriesList();
+        $categories = category::getCategoriesList();
 
 
         // Статус успешного оформления заказа
@@ -101,8 +101,8 @@ class cartController
 
                 if ($result) {
                     // Оповещаем администратора о новом заказе
-                    $adminEmail = 'php.start@mail.ru';
-                    $message = 'http://digital-mafia.net/admin/orders';
+                    $adminEmail = 'admin@test.com';
+                    $message = 'http://wezom.test/admin/orders';
                     $subject = 'Новый заказ!';
                     mail($adminEmail, $subject, $message);
 
@@ -124,7 +124,7 @@ class cartController
             $productsInCart = cart::getProducts();
 
             // В корзине есть товары?
-            if ($productsIncart == false) {
+            if ($productsInCart == false) {
                 // В корзине есть товары? - Нет
                 // Отправляем пользователя на главную искать товары
                 header("Location: /");
