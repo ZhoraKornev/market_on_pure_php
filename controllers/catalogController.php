@@ -4,7 +4,7 @@
  * Date: 08.12.2017
  * Time: 14:10
  */
-require_once(ROOT.'/function/Autoload.php');
+//require_once(ROOT.'/function/Autoload.php');
 
 class catalogController {
     public function actionIndex()
@@ -22,8 +22,8 @@ class catalogController {
 
     public function actionCategory($categoryId, $page = 1)
     {
-        echo 'categoryId'.$categoryId;
-        echo 'page'.$page;
+        //echo 'categoryId'.$categoryId;
+        //echo 'page'.$page;
         $categories = array();
         $categories = category::getCategoriesList();
 

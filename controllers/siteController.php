@@ -3,8 +3,8 @@
  * Created by PhpStorm.
  * Date: 08.12.2017
  */
-include_once ROOT . '/models/category.php';
-include_once ROOT . '/models/product.php';
+/*include_once ROOT . '/models/category.php';
+include_once ROOT . '/models/product.php';*/
 class siteController
 {
     public function actionIndex()
