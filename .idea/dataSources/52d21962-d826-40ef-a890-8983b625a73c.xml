@@ -9,163 +9,184 @@
     <schema id="3" parent="1" name="cartridge"/>
     <schema id="4" parent="1" name="forge"/>
     <schema id="5" parent="1" name="information_schema"/>
-    <schema id="6" parent="1" name="kte"/>
-    <schema id="7" parent="1" name="managing_inventaris"/>
-    <schema id="8" parent="1" name="mysql"/>
-    <schema id="9" parent="1" name="opencart"/>
-    <schema id="10" parent="1" name="performance_schema"/>
-    <schema id="11" parent="1" name="socialspy"/>
-    <schema id="12" parent="1" name="sust"/>
-    <schema id="13" parent="1" name="teploenergo"/>
-    <table id="14" parent="2" name="category"/>
-    <table id="15" parent="2" name="products"/>
-    <table id="16" parent="2" name="users"/>
-    <column id="17" parent="14" name="id">
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="opencart"/>
+    <schema id="8" parent="1" name="performance_schema"/>
+    <table id="9" parent="2" name="category"/>
+    <table id="10" parent="2" name="product_order"/>
+    <table id="11" parent="2" name="products"/>
+    <table id="12" parent="2" name="user"/>
+    <column id="13" parent="9" name="id">
       <Position>1</Position>
-      <Comment>Ключ и номер категории</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="18" parent="14" name="name">
+    <column id="14" parent="9" name="name">
       <Position>2</Position>
-      <Comment>Имя категории - старатесь использовать одно слово-описание</Comment>
-      <DataType>varchar(50)|0</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>&apos;Без имени&apos;</DefaultExpression>
-    </column>
-    <column id="19" parent="14" name="sort_order">
-      <Position>3</Position>
-      <Comment>Ключ для указания сортировки в меню</Comment>
-      <DataType>smallint(6)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="20" parent="14" name="status">
-      <Position>4</Position>
-      <Comment>Актинвна ли данаая категория</Comment>
-      <DataType>tinyint(4)|0</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>&apos;0&apos;</DefaultExpression>
-    </column>
-    <key id="21" parent="14" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="22" parent="15" name="id">
-      <Position>1</Position>
-      <Comment>Индентификатор товара</Comment>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="23" parent="15" name="category_id">
-      <Position>2</Position>
-      <Comment>Категории товара//Их может быть несколько</Comment>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="24" parent="15" name="tittle">
-      <Position>3</Position>
-      <Comment>Название товара</Comment>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="15" name="description">
+    <column id="15" parent="9" name="sort_order">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="16" parent="9" name="status">
       <Position>4</Position>
-      <Comment>Полное описание товара</Comment>
-      <DataType>text|0</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
     </column>
-    <column id="26" parent="15" name="price">
-      <Position>5</Position>
-      <Comment>Цена товара</Comment>
-      <DataType>float|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="27" parent="15" name="price_new">
-      <Position>6</Position>
-      <Comment>Акционная цена</Comment>
-      <DataType>float|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="28" parent="15" name="code">
-      <Position>7</Position>
-      <Comment>Код товара//генерируется случайным образом</Comment>
-      <DataType>int(50)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="29" parent="15" name="status">
-      <Position>8</Position>
-      <Comment>Отображать товар в списках или нет</Comment>
-      <DataType>tinyint(4)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="30" parent="15" name="brand">
-      <Position>9</Position>
-      <Comment>Бренд или марка которой принадлежит товар</Comment>
-      <DataType>varchar(50)|0</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>&apos;Без бренда&apos;</DefaultExpression>
-    </column>
-    <column id="31" parent="15" name="metatag">
-      <Position>10</Position>
-      <Comment>Метатеги для подстановки в шапку сайта</Comment>
-      <DataType>varchar(50)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="32" parent="15" name="breadcrumbs">
-      <Position>11</Position>
-      <Comment>Хлебные крошки для СЕО</Comment>
-      <DataType>varchar(50)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="33" parent="15" name="image">
-      <Position>12</Position>
-      <Comment>Ссылка на изображение</Comment>
-      <DataType>varchar(256)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="34" parent="15" name="availability">
-      <Position>13</Position>
-      <Comment>Доступность товара</Comment>
-      <DataType>tinyint(4)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="35" parent="15" name="quantity">
-      <Position>14</Position>
-      <Comment>Количество товара</Comment>
-      <DataType>int(10)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="36" parent="15" name="is_new">
-      <Position>15</Position>
-      <Comment>Отвечает за поялвение ярлыка NEW на изображении товара</Comment>
-      <DataType>tinyint(4)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <key id="37" parent="15" name="PRIMARY">
+    <key id="17" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="38" parent="16" name="id">
+    <column id="18" parent="10" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="39" parent="16" name="username">
+    <column id="19" parent="10" name="user_name">
       <Position>2</Position>
-      <DataType>varchar(30)|0</DataType>
+      <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="40" parent="16" name="password">
+    <column id="20" parent="10" name="user_phone">
       <Position>3</Position>
-      <DataType>varchar(42)|0</DataType>
+      <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="41" parent="16" name="PRIMARY">
+    <column id="21" parent="10" name="user_comment">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="10" name="user_id">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="23" parent="10" name="date">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="24" parent="10" name="products">
+      <Position>7</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="10" name="status">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <key id="26" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="27" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="28" parent="11" name="tittle">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="11" name="category_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="11" name="code">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="11" name="price">
+      <Position>5</Position>
+      <DataType>float|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="11" name="price_new">
+      <Position>6</Position>
+      <DataType>float|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="11" name="availability">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="11" name="brand">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="11" name="description">
+      <Position>9</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="11" name="is_new">
+      <Position>10</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="37" parent="11" name="is_recommended">
+      <Position>11</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="38" parent="11" name="status">
+      <Position>12</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <key id="39" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="40" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="41" parent="12" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="12" name="email">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="12" name="password">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="12" name="role">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="45" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

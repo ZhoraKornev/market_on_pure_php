@@ -7,7 +7,8 @@
  * Класс для генерации постраничной навигации
  */
 
-class pagination
+
+class Pagination
 {
 
     /**
@@ -33,7 +34,7 @@ class pagination
 
     /**
      *
-     * @var Общее количество записей
+     * @var this->total количество записей
      *
      */
     private $total;
@@ -137,7 +138,7 @@ class pagination
     /**
      *  Для получения, откуда стартовать
      *
-     * @return array с началом и концом отсчёта
+     * @return массив с началом и концом отсчёта
      */
     private function limits()
     {
@@ -188,12 +189,11 @@ class pagination
     /**
      * Для получеия общего числа страниц
      *
-     * @return
+     * @return число страниц
      */
     private function amount()
     {
         # Делим и возвращаем
-        echo (round($this->total / $this->limit));
         return round($this->total / $this->limit);
     }
 

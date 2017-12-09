@@ -4,7 +4,7 @@ include_once ROOT .'/function/db.php';
 
 class product {
 
-    const SHOW_BY_DEFAULT = 1;
+    const SHOW_BY_DEFAULT = 3;
 
     /**
      * Returns an array of products
@@ -41,9 +41,9 @@ class product {
             $page = intval($page);
             $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
 
-            $db = Db::getConnection();
+            $db = db::getConnection();
             $products = array();
-            $result = $db->query("SELECT id, tittle, price, price_new, image, is_new FROM products "
+            $result = $db->query("SELECT id, tittle, price, price_new, is_new FROM products "
                 . "WHERE status = '1' AND category_id = '$categoryId' "
                 . "ORDER BY id ASC "
                 . "LIMIT ".self::SHOW_BY_DEFAULT
@@ -53,7 +53,7 @@ class product {
             while ($row = $result->fetch()) {
                 $products[$i]['id'] = $row['id'];
                 $products[$i]['tittle'] = $row['tittle'];
-                $products[$i]['image'] = $row['image'];
+                //$products[$i]['image'] = $row['image'];
                 $products[$i]['price'] = $row['price'];
                 $products[$i]['price_new'] = $row['price_new'];
                 $products[$i]['is_new'] = $row['is_new'];
@@ -88,9 +88,10 @@ class product {
 
         $result = $db->query('SELECT count(id) AS count FROM products '
             . 'WHERE status="1" AND category_id ="'.$categoryId.'"');
-        $result->setFetchMode(PDO::FETCH_ASSOC );
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $row = $result->fetch();
 
-        return $result->fetch();
+        return $row['count'];
 }
 
 

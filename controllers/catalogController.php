@@ -22,6 +22,8 @@ class catalogController {
 
     public function actionCategory($categoryId, $page = 1)
     {
+        echo 'categoryId'.$categoryId;
+        echo 'page'.$page;
         $categories = array();
         $categories = category::getCategoriesList();
 
