@@ -40,7 +40,7 @@
                                 <tr>
                                     <td><?php echo $product['code'];?></td>
                                     <td>
-                                        <a href="/product/<?php echo $product['id'];?>">
+                                        <a href="/alias/p<?php echo $product['id'];?>">
                                             <?php echo $product['tittle'];?>
                                         </a>
                                     </td>

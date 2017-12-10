@@ -104,7 +104,8 @@
     </div><!--/header-bottom-->
 
 
-
+    <?php breadCrumbs::run(); ?>
+    <?php echo $crumbs['text'] ?>
 
 
 

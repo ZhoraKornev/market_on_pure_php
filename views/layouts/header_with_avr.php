@@ -64,8 +64,8 @@ if($pageRobots)
 
 
     <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-        <a href="адрес страницы 1го уровня (например, главная)" itemprop="url">
-            <span itemprop="title">название страницы</span>
+        <a href="$item['url']"> itemprop="url">
+            <span itemprop="title">$item['text'] </span>
         </a>
     </div>
 

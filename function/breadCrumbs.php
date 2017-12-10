@@ -13,6 +13,18 @@ class breadCrumbs
         $cur_url = $_SERVER['REQUEST_URI'];
         $urls = explode('/', $cur_url);
 
+        print_r($urls);
+
+        echo " <div class=\"breadcrumbs\">
+        <ol class=\"breadcrumb\">
+            <li><a href=\"/admin\">Админпанель</a></li>
+            <li><a href=\"/admin/order\">Управление заказами</a></li>
+            <li class=\"active\">Редактировать заказ</li>
+        </ol>
+    </div>";
+
+        echo "<div itemscope itemtype=\"http://data-vocabulary.org/Breadcrumb\">        <a href=\"$item['url']\"> itemprop=\"url\">            <span itemprop=\"title\">$item['text'] </span>        </a>    </div>";
+
         $crumbs = array();
 
         if (!empty($urls) && $cur_url != '/') {
@@ -30,8 +42,8 @@ class breadCrumbs
                     case 'about' :
                         $crumbs[$key]['text'] = 'О нас';
                         break;
-                    case 'services' :
-                        $crumbs[$key]['text'] = 'Услуги';
+                    case 'catalog' :
+                        $crumbs[$key]['text'] = 'Каталог';
                         break;
                     case 'blog' :
                         $crumbs[$key]['text'] = 'Блог';
@@ -39,11 +51,11 @@ class breadCrumbs
                     case 'contacts' :
                         $crumbs[$key]['text'] = 'Контакты';
                         break;
-                    case 'portfolio' :
-                        $crumbs[$key]['text'] = 'Наши работы';
+                    case 'alias/c([0-9]+)' :
+                        $crumbs[$key]['text'] = 'Товары';
                         break;
-                    case 'prices' :
-                        $crumbs[$key]['text'] = 'Цены';
+                    case 'cabinet' :
+                        $crumbs[$key]['text'] = 'Кабинет';
                         break;
                     default :
                         $crumbs[$key]['text'] = 'Главная страница';
