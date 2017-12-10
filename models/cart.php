@@ -86,4 +86,32 @@ class cart
         }
     }
 
+    public static function deleteItem($id)
+    {
+        //intval — Возвращает целое значение переменной
+        $id = intval($id);
+        // Если вызвали функцию удаления то товары уже есть в корзине иначе вызов этой функции возможен только вручную
+        // и он закрешит сайт поэтому делаем проверку
+        if (isset($_SESSION['products'])) {
+            $productsInCart = $_SESSION['products'];
+        }
+        else
+        {
+            return false;
+        }
+        // Проверяем есть ил удаляемый элемент в корзине и его количество
+        // если больше 1 то просто уменьшаем количество на еденицу
+        if (array_key_exists($id, $productsInCart) && $productsInCart[$id] > 1) {
+            $productsInCart[$id] --;
+        } else {
+            // В другом случае просто обнуляем количество товара
+            //$productsInCart[$id] = 0;
+            unset($productsInCart[$id]);
+        }
+//обновляем глобальную переменную
+        $_SESSION['products'] = $productsInCart;
+        return self::countItems();
+    }
+
+
 }

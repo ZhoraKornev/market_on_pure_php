@@ -19,7 +19,7 @@ class db
         {
             print "Error!: " . $e->getMessage() . "<br/>";
             //include(ROOT.'/function/errorPage.php'); // redirect for the error page
-            die();
+            die('MySQL Получил неверный запрос или неверные данные для работы с базой данных');
         }
     }
 }
