@@ -1,75 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>Culinary by Free Css Templates</title>
-        <meta name="keywords" content="" />
-        <meta name="description" content="" />
-        <link href="/template/css/style.css" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-        <div id="wrapper">
-            <div id="header">
-                <div id="logo">
-                    <h1><a href="#">Culinary</a></h1>
-                </div>
-                <!-- end div#logo -->
-            </div>
-            <!-- end div#header -->
-            <div id="menu">
-                <ul>
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <!-- end div#menu -->
-            <div id="page">
-                <div id="page-bgtop">
-                    <div id="content">
-                        
-                        <?php foreach ($newsList as $newsItem):?>
-                            <div class="post">
-                                <h2 class="title"><a href="/news/<?php echo $newsItem['id'];?>"><?php echo $newsItem['title'];?></a></h2>
-                                <p class="byline"><?php echo $newsItem['date'];?></p>
-                                <div class="entry">
-                                    <p><?php echo $newsItem['short_content'];?></p>
-                                </div>
-                                <div class="meta">
-                                    <p class="links"><a href="/news/<?php echo $newsItem['id'];?>" class="comments">Read more</a></p>
-                                </div>
-                            </div>
-                        <?php endforeach;?>
+<?php
+/** * Created by PhpStorm. * Date: 07.12.2017 * Time: 11:13 */
+include ROOT.'/views/layouts/header.php'?>
 
-                        
-                    </div>
-                    <!-- end div#content -->
-                    <div id="sidebar">
-                        <ul>
-                            <li>
-                                <h2 class="categories">Lorem Ipsum</h2>
-                                <ul>
-                                    <li><a href="#">Fusce dui neque fringilla</a></li>
-                                    <li><a href="#">Eget tempor eget nonummy</a></li>
-                                    <li><a href="#">Magna lacus bibendum mauris</a></li>
-                                    <li><a href="#">Nec metus sed donec</a></li>
-                                    <li><a href="#">Magna lacus bibendum mauris</a></li>
-                                    <li><a href="#">Velit semper nisi molestie</a></li>
-                                    <li><a href="#">Eget tempor eget nonummy</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- end div#sidebar -->
-                    <div style="clear: both; height: 1px"></div>
-                </div>
-            </div>
-            <!-- end div#page -->
-            <div id="footer">
-                <p>Copyright &copy; 2007</div>
-            <!-- end div#footer -->
-        </div>
-        <!-- end div#wrapper -->
-    </body>
-</html>
+            <!-- end div#header -->
+<body bgcolor='#ffffff' text='#000000' link='#0000CC' vlink='#9900FF'>
+<font face='Times New Roman,Arial Narrow,Arial,Helvetica,Courier New,Helv'>
+    <div class="text-center text-info"    ><h1><em>Стрaница Блога</em></h1></div>
+    <div class="container">
+    <div class="text-center col-lg-offset-2" ><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda, magni quo quos reprehenderit repudiandae vitae! Accusamus aliquid blanditiis deserunt et illo in labore nisi, obcaecati quae, quos, recusandae temporibus!</span><span>Consequatur cum cumque earum error fugiat inventore iste laboriosam magnam maxime molestias mollitia omnis quia repellendus suscipit, tenetur. Aliquid culpa debitis dolor hic illo minima, modi non quibusdam tempore unde?</span><span>Accusantium, culpa qui. Ad alias at atque consequuntur dignissimos dolores enim eos, ex itaque laborum minus nihil odio placeat possimus quaerat ratione recusandae reiciendis sequi sint sit sunt, veniam voluptatum.</span><span>Commodi dolorem eligendi explicabo provident sed veniam? Dolore facere laudantium nisi perferendis sed. Accusamus, animi corporis fugit iste laboriosam libero, nisi, optio quidem quod recusandae rem repellat soluta voluptatem voluptates.</span><span>Accusantium autem ducimus ipsa ipsam nostrum nulla ratione? Deserunt dolorem facere laboriosam nostrum odio odit qui recusandae rerum saepe ullam. Alias dicta, eius et ipsum iusto mollitia quae quos similique.</span></div>
+    </div>
+</body>
+
+
+<?php include ROOT.'/views/layouts/footer.php'?>

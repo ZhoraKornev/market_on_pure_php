@@ -37,7 +37,8 @@
                         <td><?php echo $product['tittle']; ?></td>
                         <td><?php echo $product['price']; ?></td>  
                         <td><?php echo $product['price_new']; ?></td>
-                        <td><?php echo $product['category_id']; ?></td>
+                        <td><?php echo category::getCategoryText($product['category_id']); ?></td>
+                        <!--<td><?php /*echo $product['category_id']; */?></td>-->
                         <td><a href="/admin/product/update/<?php echo $product['id']; ?>" title="Редактировать"><i class="fa fa-pencil-square-o"></i></a></td>
                         <td><a href="/admin/product/delete/<?php echo $product['id']; ?>" title="Удалить"><i class="fa fa-times"></i></a></td>
                     </tr>

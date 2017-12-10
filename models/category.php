@@ -134,23 +134,16 @@ class category
     }
 
     /**
-     * Возвращает текстое пояснение статуса для категории :<br/>
-     * <i>0 - Скрыта, 1 - Отображается</i>
-     * @param integer $status <p>Статус</p>
+     * Возвращает текстое пояснение статуса для категории
+     * Создаёт запрос в текущую функцию и возвращает в виде стрингововй переменой - имя
      * @return string <p>Текстовое пояснение</p>
      */
-    public static function getStatusText($status)
+    public static function getCategoryText($id)
     {
-        switch ($status) {
-            case '1':
-                return 'Отображается';
-                break;
-            case '0':
-                return 'Скрыта';
-                break;
-        }
+        $name = array();
+        $name = self::getCategoryById($id);
+        return $name['name'];
     }
-
     /**
      * Добавляет новую категорию
      * @param string $name <p>Название</p>

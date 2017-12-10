@@ -887,9 +887,16 @@ h2.title {
   height: 34px;
 }
 
-.productinfo img{
+/*.productinfo img{
   width: 100%;
-}
+}*/
+
+.imageProduct {position: relative; cursor:pointer; /*display: inline-block;*/}
+.imageProduct img + img {position:absolute; left: 0; top:0; z-index:100; display: none;}
+.imageProduct:hover img + img {display: block;}
+
+
+
 
 .productinfo{
  position:relative;

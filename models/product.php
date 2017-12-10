@@ -350,20 +350,18 @@ class product
     }
 
     /**
-     * Возвращает путь к изображению
+     * Возвращает путь к изображению 110x110 px
      * @param integer $id
      * @return string <p>Путь к изображению</p>
      */
-    public static function getImage($id)
+    public static function getLowImage($id)
     {
         // Название изображения-пустышки
-        $noImage = 'no-image.jpg';
-
+        $noImage = 'no_image_110.jpg';
         // Путь к папке с товарами
         $path = '/upload/images/products/';
-
         // Путь к изображению товара
-        $pathToProductImage = $path . $id . '.jpg';
+        $pathToProductImage = $path . $id . '/product_110.jpg';
 
         if (file_exists($_SERVER['DOCUMENT_ROOT'].$pathToProductImage)) {
             // Если изображение для товара существует
@@ -374,5 +372,60 @@ class product
         // Возвращаем путь изображения-пустышки
         return $path . $noImage;
     }
+    /**
+     * Возвращает путь к изображению 250x250 px
+     * @param integer $id
+     * @return string <p>Путь к изображению</p>
+     */
+
+    public static function getMediumImage($id)
+    {
+// Название изображения-пустышки
+        $noImage = 'no_image_250.jpg';
+        // Путь к папке с товарами
+        $path = '/upload/images/products/';
+
+        // Путь к изображению товара
+        $pathToProductImage = $path . $id . '/product_250.jpg';
+
+        if (file_exists($_SERVER['DOCUMENT_ROOT'].$pathToProductImage)) {
+            // Если изображение для товара существует
+            // Возвращаем путь изображения товара
+            return $pathToProductImage;
+        }
+
+        // Возвращаем путь изображения-пустышки
+        return $path . $noImage;
+    }
+
+    /**
+     * Возвращает путь к изображению 250x250 px
+     * @param integer $id
+     * @return string <p>Путь к изображению</p>
+     */
+
+    public static function getLargeImage($id)
+    {
+// Название изображения-пустышки
+        $noImage = 'no_image_450.jpg';
+        // Путь к папке с товарами
+        $path = '/upload/images/products/';
+
+        // Путь к изображению товара
+        $pathToProductImage = $path . $id . '/product_450.jpg';
+
+        if (file_exists($_SERVER['DOCUMENT_ROOT'].$pathToProductImage)) {
+            // Если изображение для товара существует
+            // Возвращаем путь изображения товара
+            return $pathToProductImage;
+        }
+
+        // Возвращаем путь изображения-пустышки
+        return $path . $noImage;
+    }
+
+
+
+
 
 }

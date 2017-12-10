@@ -52,6 +52,7 @@ return array(
     // О магазине
     'contacts' => 'site/contact',
     'about' => 'site/about',
+    'blog'=> 'site/blog',
 
     '' => 'site/index', // actionIndex в SiteController
 );

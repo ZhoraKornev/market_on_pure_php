@@ -15,6 +15,9 @@ class siteController
         $latestProducts = array();
         $latestProducts = product::getLatestProducts(6);
 
+        // Список товаров для слайдера
+        $sliderProducts = Product::getRecommendedProducts();
+
         require_once (ROOT.'/views/main/index.php');
         return true;
     }
@@ -51,5 +54,18 @@ class siteController
 
         return true;
     }
+
+    public function actionBLog()
+    {
+        require_once(ROOT . '/views/blog/index.php');
+        return true;
+    }
+
+    public function actionAbout()
+    {
+        require_once(ROOT . '/views/about/index.php');
+        return true;
+    }
+
 
 }

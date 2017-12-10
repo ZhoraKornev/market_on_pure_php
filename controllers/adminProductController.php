@@ -72,8 +72,32 @@ class adminProductController extends adminBase
                 if ($id) {
                     // Проверим, загружалось ли через форму изображение
                     if (is_uploaded_file($_FILES["image"]["tmp_name"])) {
+                            // Желаемая структура папок
+                            $structure = "./upload/images/products/{$id}";
+                            // Для создания вложенной структуры необходимо указать параметр
+                            if (!mkdir($structure, 0777, true)) {
+                                print_r($structure);
+                                die('Не удалось создать директории...');
+                            }
                         // Если загружалось, переместим его в нужную папке, дадим новое имя
-                        move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "/upload/images/products/{$id}.jpg");
+                        move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "{$structure}/product_450.jpg");
+                        //теперь нужно загружаемую картинку имзенить до размеров 450х450
+                        // файл и новый размер
+                        $fileNamePath = "{$structure}/product_450.jpg";
+                        $image = new SimpleImage();
+                        $image->load($fileNamePath);
+                        $image->resize(450, 450);
+                        $image->save($fileNamePath);
+                        //Делаем изображение размером 250х250
+                        $newFileNamePath = "{$structure}/product_250.jpg";
+                        $image->resize(250, 250);
+                        $image->save($newFileNamePath);
+                        //Делаем изображение размером 110х110
+                        $newFileNamePath = "{$structure}/product_110.jpg";
+                        $image->resize(110, 110);
+                        $image->save($newFileNamePath);
+
+
                     }
                 };
 
@@ -123,17 +147,38 @@ class adminProductController extends adminBase
 
                 // Если запись сохранена
                 // Проверим, загружалось ли через форму изображение
-                if (is_uploaded_file($_FILES["image"]["tmp_name"])) {
-
+                if (is_uploaded_file($_FILES["image"]["tmp_name"]))
+                {
+                    // Желаемая структура папок
+                    $structure = "./upload/images/products/{$id}";
+                    // Для создания вложенной структуры необходимо указать параметр
+                    if (!mkdir($structure, 0777, true))
+                    {
+                        print_r($structure);
+                        die('Не удалось создать директории...');
+                    }
                     // Если загружалось, переместим его в нужную папке, дадим новое имя
-                    move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "/upload/images/products/{$id}.jpg");
+                    move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "{$structure}/product_450.jpg");
+                    //теперь нужно загружаемую картинку имзенить до размеров 450х450
+                    // файл и новый размер
+                    $fileNamePath = "{$structure}/product_450.jpg";
+                    $image = new SimpleImage();
+                    $image->load($fileNamePath);
+                    $image->resize(450, 450);
+                    $image->save($fileNamePath);
+                    //Делаем изображение размером 250х250
+                    $newFileNamePath = "{$structure}/product_250.jpg";
+                    $image->resize(250, 250);
+                    $image->save($newFileNamePath);
+                    //Делаем изображение размером 110х110
+                    $newFileNamePath = "{$structure}/product_110.jpg";
+                    $image->resize(110, 110);
+                    $image->save($newFileNamePath);
                 }
             }
-
             // Перенаправляем пользователя на страницу управлениями товарами
             header("Location: /admin/product");
         }
-
         // Подключаем вид
         require_once(ROOT . '/views/admin_product/update.php');
         return true;

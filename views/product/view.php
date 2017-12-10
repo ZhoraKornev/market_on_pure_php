@@ -42,7 +42,7 @@ include ROOT.'/views/layouts/header.php'?>
                             </div>
                             <div class="col-sm-7">
                                 <div class="product-information"><!--/product-information-->
-                                    <img src="/assets/img/product-details/new.jpg" class="newarrival" alt="" />
+                                    <img src="/assets/img/home/new.jpg" class="newarrival" alt="" />
                                     <h2><?php echo $product['tittle'];?></h2>
                                     <p>Код товара: <?php echo $product['code'];?></p>
                                     <span>
