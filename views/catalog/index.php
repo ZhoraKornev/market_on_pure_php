@@ -26,13 +26,19 @@
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
                     <h2 class="title text-center">Последние товары</h2>
-                    
+
                     <?php foreach ($latestProducts as $product): ?>
+
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="/assets/img/home/product1.jpg" alt="" />
+                                        <div class="imageProduct">
+                                            <img src="<?php echo product::getLowImage($product['id']); ?>" />
+                                            <img src="<?php echo product::getMediumImage($product['id']); ?>"/>
+                                        </div>
+
+                                        <!--<img src="/assets/img/home/product1.jpg" alt="" />-->
                                         <?php if ($product['price_new']): ?>
                                             <h4><s>$<?php echo $product['price'];?></s></h4>
                                             <h2>$<?php echo $product['price_new'];?></h2>
@@ -52,8 +58,8 @@
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach;?>                   
 
+                    <?php endforeach; ?>
                 </div><!--features_items-->
 
 

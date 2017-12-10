@@ -37,7 +37,7 @@ include ROOT.'/views/layouts/header.php'?>
                         <div class="row">
                             <div class="col-sm-5">
                                 <div class="view-product">
-                                    <img src="/assets/img/product-details/1.jpg" alt="" />
+                                        <img src="<?php echo product::getLargeImage($product['id']); ?>" />
                                 </div>
                             </div>
                             <div class="col-sm-7">
@@ -54,10 +54,7 @@ include ROOT.'/views/layouts/header.php'?>
                                         <?php endif; ?></span>
                                     <label>Количество:</label>
                                     <input type="text" value="3" />
-                                    <button type="button" class="btn btn-fefault cart">
-                                        <i class="fa fa-shopping-cart"></i>
-                                        В корзину
-                                    </button>
+                                    <a href="/cart/add/<?php echo $product['id']; ?>" class="btn btn-default add-to-cart" data-id="<?php echo $product['id']; ?>"><i class="fa fa-shopping-cart"></i>В корзину</a>
                                 </span>
                                     <p><b>Наличие:</b> На складе</p>
                                     <p><b>Состояние:</b> Новое</p>

@@ -16,13 +16,6 @@
     <link href="/assets/styles/responsive.css" rel="stylesheet">
     <!--<!--[if lt IE 9]>-->
     <script src="/assets/js/html5shiv.js"></script>
-    <!--<script src="/assets/js/respond.min.js"></script>-->
-    <!--<!--<![endif]
-    <link rel="shortcut icon" href="/assets/img/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/img/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/img/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/img/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="/assets/img/ico/apple-touch-icon-57-precomposed.png">-->
 </head><!--/head-->
 
 <body>
@@ -109,5 +102,11 @@
             </div>
         </div>
     </div><!--/header-bottom-->
+
+
+
+
+
+
 
 </header><!--/header-->

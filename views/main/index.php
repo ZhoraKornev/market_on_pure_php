@@ -1,12 +1,13 @@
 <?php
 /** * Created by PhpStorm. * Date: 07.12.2017 * Time: 11:13 */
 include ROOT.'/views/layouts/header.php'?>
+
     <section>
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
                     <div class="left-sidebar">
-                        <h2>Каталог</h2>
+                        <h2>РљР°С‚Р°Р»РѕРі</h2>
                         <div class="panel-group category-products">
                             <?php foreach ($categories as $category):?>
                                 <div class="panel panel-default">
@@ -25,7 +26,7 @@ include ROOT.'/views/layouts/header.php'?>
 
                 <div class="col-sm-9 padding-right">
                     <div class="features_items"><!--features_items-->
-                        <h2 class="title text-center">Последние товары</h2>
+                        <h2 class="title text-center">РџРѕСЃР»РµРґРЅРёРµ С‚РѕРІР°СЂС‹</h2>
 
                         <?php foreach ($latestProducts as $product): ?>
 
@@ -33,14 +34,8 @@ include ROOT.'/views/layouts/header.php'?>
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                         <!--                   <div class="imageProduct">
-                         http://shpargalkablog.ru/2011/05/kak-uvelichit-izobrazhenie.html#close
-                                                <img src="/upload/images/products/no_img_product_110.jpg"/>
-                                                <img src="/upload/images/products/no_image_250.jpg" />
-                                            </div>
-                                            -->
                                             <div class="imageProduct">
-                                            <img src="<?php echo product::getLowImage($product['id']); ?>" />
+                                                <img src="<?php echo product::getLowImage($product['id']); ?>" />
                                                 <img src="<?php echo product::getMediumImage($product['id']); ?>"/>
                                             </div>
 
@@ -56,7 +51,7 @@ include ROOT.'/views/layouts/header.php'?>
                                                     <?php echo $product['tittle'];?>
                                                 </a>
                                             </p>
-                                            <a href="/cart/add/<?php echo $product['id']; ?>" class="btn btn-default add-to-cart" data-id="<?php echo $product['id']; ?>"><i class="fa fa-shopping-cart"></i>В корзину</a>
+                                            <a href="/cart/add/<?php echo $product['id']; ?>" class="btn btn-default add-to-cart" data-id="<?php echo $product['id']; ?>"><i class="fa fa-shopping-cart"></i>Р’ РєРѕСЂР·РёРЅСѓ</a>
                                         </div>
                                         <?php if ($product['is_new']): ?>
                                             <img src="/assets/img/home/new.png" class="new" alt="" />
@@ -69,10 +64,10 @@ include ROOT.'/views/layouts/header.php'?>
                     </div><!--features_items-->
 
                     <!--recommended_items-->
-<!--
+                    <!--
                     <div class="recommended_items">
 
-                        <h2 class="title text-center">Рекомендуемые товары</h2>
+                        <h2 class="title text-center">Р РµРєРѕРјРµРЅРґСѓРµРјС‹Рµ С‚РѕРІР°СЂС‹</h2>
 
                         <div class="cycle-slideshow"
                              data-cycle-fx=carousel
@@ -94,7 +89,7 @@ include ROOT.'/views/layouts/header.php'?>
                                                     <?php /*echo $product['tittle']; */?>
                                                 </a>
                                                 <br/><br/>
-                                                <a href="#" class="btn btn-default add-to-cart" data-id="<?php /*echo $sliderItem['id']; */?>"><i class="fa fa-shopping-cart"></i>В корзину</a>
+                                                <a href="#" class="btn btn-default add-to-cart" data-id="<?php /*echo $sliderItem['id']; */?>"><i class="fa fa-shopping-cart"></i>Р’ РєРѕСЂР·РёРЅСѓ</a>
                                             </div>
                                             <?php /*if ($sliderItem['is_new']): */?>
                                                 <img src="/assets/img/home/new.png" class="new" alt="" />
@@ -115,7 +110,7 @@ include ROOT.'/views/layouts/header.php'?>
                     </div>
                 </div>-->
 
-                <!--/recommended_items-->
+                    <!--/recommended_items-->
 
                 </div>
             </div>
