@@ -118,18 +118,16 @@
     //если мы находимся на вложеном подуровне то смотрим где + добавляем ссылки в путь, потому как микроформат требует полного пути то используем перменную имени домена
     else
     {
-        echo ("<div itemscope itemtype=\"http://data-vocabulary.org/Breadcrumb\"><a href=\"$domenName\" itemprop=\"url\"><span itemprop=\"title\">Главная</span></a> &raquo; ");
+        echo ("<div class='breadcrumb col-lg-offset-1' itemscope itemtype=\"http://data-vocabulary.org/Breadcrumb\"><a href=\"$domenName\" itemprop=\"url\"><span itemprop=\"title\">Главная</span></a> &raquo; ");
         //print_r($parts);
         for ($i = 2; $i < count($parts); $i++)
         {
             if (!strstr($parts[$i],"."))
             {
                 echo("<a href=$domenName/");
-                for ($j = 0; $j <= $i; $j++) {echo $parts[$j]."";};
+                for ($j = 0; $j <= $i; $j++) {echo $parts[$j]."/";};
                 //echo("\">". str_replace('-', ' ', $parts[$i])."</a> » ");
                 echo("\">". $pageDescription."</a> » ");
-
-
             }
             else
             {
@@ -141,17 +139,5 @@
         };
     };
     ?>
-<!--    <?php /*breadCrumbs::run(); */?>
-    --><?php /*echo $crumbs['text'] */?>
-
-
-
-<!--    <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-        <a href="адрес страницы 3го уровня (например, подрубрика)" itemprop="url">
-            <span itemprop="title">$pageDescription</span>
-        </a>
-    </div>-->
-
-
 
 </header><!--/header-->
