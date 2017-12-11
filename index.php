@@ -13,5 +13,5 @@ define('ROOT', dirname(__FILE__));
 require_once(ROOT.'/function/Autoload.php');
 
 // Вызов Router
-$router = new Router();
+$router = new router();
 $router->run();

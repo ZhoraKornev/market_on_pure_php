@@ -14,8 +14,8 @@
     •	На всех страницах должны присутствовать необходимые meta-tags
     •	Реализовать администрирование категорий и товаров
     •	Роутинг должен быть реализован в виде:
-    Domen/alias/c<id> - Категория товаров
-    Domen/alias/p<id> - Товар
+                                 Domen/alias/c<id> - Категория товаров
+                                 Domen/alias/p<id> - Товар
     
 
 
@@ -39,7 +39,7 @@
 
 ![Главная страница магаизна](https://screenshots.firefoxusercontent.com/images/ec1a2b6f-7bb2-414a-abea-64fbb3f3ef85.png)
 
-
+[Видео про данный проект и работу маршрутизации](https://youtu.be/AVpCHPMhmsA)
 
 > За визуальную основу взят шаблон Word Press [e-commerce](https://wordpress.org/themes/e-commerce/)
   также в качестве приемлемой визуальной составляющей использован  [Bootstrap 4](http://getbootstrap.com/) использованы шрифты [FontAwesome](http://fontawesome.io/) и самописные стили в Main.CSS
