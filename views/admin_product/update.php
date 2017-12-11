@@ -34,19 +34,26 @@
                         <p>Новая цена, $</p>
                         <input type="text" name="price_new" placeholder="" value="<?php echo $product['price_new']; ?>">
 
-                        <p>Категория</p>
-                        <select name="category_id">
-                            <?php if (is_array($categoriesList)): ?>
-                                <?php foreach ($categoriesList as $category): ?>
-                                    <option value="<?php echo $category['id']; ?>" 
-                                        <?php if ($product['category_id'] == $category['id']) echo ' selected="selected"'; ?>>
-                                        <?php echo $category['name']; ?>
+                        <p>Список категорий:</p>
+                        <?php if (is_array($categoriesList)): ?>
+                        <?php foreach ($categoriesList as $category):
+                                //if ($product['category_id'] == $category['id']) echo 'checked="checked"';
+                                echo "<input type=\"checkbox\" name=\"category_id\" value=\"".$category['id']."\"> ".$category['name']."<hr>";
+                              ?>
+                        <?php endforeach; ?>
+                        <?php endif; ?>
+                        <!--<select name="category_id">
+                            <?php /*if (is_array($categoriesList)): */?>
+                                <?php /*foreach ($categoriesList as $category): */?>
+                                    <option value="<?php /*echo $category['id']; */?>"
+                                        <?php /*if ($product['category_id'] == $category['id']) echo ' selected="selected"'; */?>>
+                                        <?php /*echo $category['name']; */?>
                                     </option>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                        </select>
+                                <?php /*endforeach; */?>
+                            <?php /*endif; */?>
+                        </select>-->
                         
-                        <br/><br/>
+                   <!--     <br/><br/>-->
 
                         <p>Производитель</p>
                         <input type="text" name="brand" placeholder="" value="<?php echo $product['brand']; ?>">
