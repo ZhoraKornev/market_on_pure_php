@@ -24,6 +24,8 @@ class cartController
         // Удалить товар из корзины
         cart::deleteItem($id);
         // Возвращаем пользователя на страницу
+        $pageTitle = "Корзина";
+        $pageDescription = "Корзина пользователя";
         header("Location: /cart/");
     }
 
@@ -53,6 +55,8 @@ class cartController
             $totalPrice = cart::getTotalPrice($products);
         }
 
+        $pageTitle = "Корзина";
+        $pageDescription = "Корзина пользователя";
         require_once(ROOT . '/views/cart/index.php');
 
         return true;
@@ -156,7 +160,8 @@ class cartController
                 }
             }
         }
-
+        $pageTitle = "Корзина";
+        $pageDescription = "Корзина пользователя";
         require_once(ROOT . '/views/cart/checkout.php');
 
         return true;

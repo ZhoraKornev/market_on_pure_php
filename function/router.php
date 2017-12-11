@@ -63,10 +63,21 @@ private function getURI()
 
                 //create object class controller
                 $controllerObject = new $controllerName;
-                $result = call_user_func_array(array($controllerObject,$actionName),$parameters);
+                try
+                {
+                    $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
+                }
+                catch ( Exception $e)
+                {
+                    $e->getMessage();
+                }
                 if ($result != null)
                 {
                     break;
+                }
+                else
+                {
+                    require_once(ROOT . '/views/about/index.php');
                 }
             }
         }

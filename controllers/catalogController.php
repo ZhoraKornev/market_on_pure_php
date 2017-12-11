@@ -15,6 +15,9 @@ class catalogController {
         $latestProducts = array();
         $latestProducts = product::getLatestProducts(12);
 
+        $pageTitle = "Каталог";
+        $pageDescription = "Каталог категорий";
+
         require_once(ROOT . '/views/catalog/index.php');
 
         return true;
@@ -35,7 +38,8 @@ class catalogController {
         // Создаем объект Pagination - постраничная навигация
         $pagination = new pagination($total, $page, product::SHOW_BY_DEFAULT, 'page-');
 
-
+        $pageTitle = "Каталог по категориям";
+        $pageDescription = category::getCategoryText($categoryId);
         require_once(ROOT . '/views/catalog/category.php');
 
         return true;

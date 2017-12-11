@@ -12,10 +12,12 @@ class productController {
     {
 
         $categories = array();
-        $categories = Category::getCategoriesList();
+        $categories = category::getCategoriesList();
 
-        $product = Product::getProductById($productId);
+        $product = product::getProductById($productId);
 
+        $pageTitle = "Описание товара ".$product['tittle'];
+        $pageDescription = "Характеристики ".$product['tittle'];
         require_once(ROOT . '/views/product/view.php');
 
         return true;

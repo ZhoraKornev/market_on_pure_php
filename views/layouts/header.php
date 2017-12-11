@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="">
+    <!--<meta name="description" content="">-->
     <meta name="author" content="">
-    <title>Главная</title>
+    <title><?php echo $pageTitle; ?></title>
+    <meta name="description" content="<?php echo $pageDescription; ?>">
     <link href="/assets/styles/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/styles/font-awesome.min.css" rel="stylesheet">
     <link href="/assets/styles/prettyPhoto.css" rel="stylesheet">
@@ -102,11 +103,54 @@
             </div>
         </div>
     </div><!--/header-bottom-->
+<!--Реализация хлебных крошек в микроформате всё реализовано на лету-->
+    <?php
+    //$path = $_SERVER["PHP_SELF"];
+    $path = $_SERVER['REQUEST_URI'];
+    $parts = explode('/',$path);
+    $domenName = 'http://wezom.test';
+    //print_r($parts);
+    //Проверяем на каком уровне мы находимся
+    if (count($parts) < 2)
+    {
+        echo("<div itemscope itemtype=\"http://data-vocabulary.org/Breadcrumb\"><a href=\"\" itemprop=\"url\"><span itemprop=\"title\">$pageDescription</span></a></div>");
+    }
+    //если мы находимся на вложеном подуровне то смотрим где + добавляем ссылки в путь, потому как микроформат требует полного пути то используем перменную имени домена
+    else
+    {
+        echo ("<div itemscope itemtype=\"http://data-vocabulary.org/Breadcrumb\"><a href=\"$domenName\" itemprop=\"url\"><span itemprop=\"title\">Главная</span></a> &raquo; ");
+        //print_r($parts);
+        for ($i = 2; $i < count($parts); $i++)
+        {
+            if (!strstr($parts[$i],"."))
+            {
+                echo("<a href=$domenName/");
+                for ($j = 0; $j <= $i; $j++) {echo $parts[$j]."";};
+                //echo("\">". str_replace('-', ' ', $parts[$i])."</a> » ");
+                echo("\">". $pageDescription."</a> » ");
 
 
-    <?php breadCrumbs::run(); ?>
-    <?php echo $crumbs['text'] ?>
+            }
+            else
+            {
+                $str = $parts[$i];
+                $pos = strrpos($str,".");
+                $parts[$i] = substr($str, 0, $pos);
+                echo str_replace('-', ' ', $parts[$i]);
+            };
+        };
+    };
+    ?>
+<!--    <?php /*breadCrumbs::run(); */?>
+    --><?php /*echo $crumbs['text'] */?>
 
+
+
+<!--    <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+        <a href="адрес страницы 3го уровня (например, подрубрика)" itemprop="url">
+            <span itemprop="title">$pageDescription</span>
+        </a>
+    </div>-->
 
 
 

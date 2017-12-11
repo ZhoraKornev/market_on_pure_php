@@ -38,8 +38,6 @@ include ROOT.'/views/layouts/header.php'?>
                                                 <img src="<?php echo product::getLowImage($product['id']); ?>" />
                                                 <img src="<?php echo product::getMediumImage($product['id']); ?>"/>
                                             </div>
-
-                                            <!--<img src="/assets/img/home/product1.jpg" alt="" />-->
                                             <?php if ($product['price_new']): ?>
                                                 <h4><s>$<?php echo $product['price'];?></s></h4>
                                                 <h2>$<?php echo $product['price_new'];?></h2>

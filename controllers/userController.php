@@ -44,6 +44,8 @@ class userController
             }
 
         }
+        $pageTitle = "Авторизация";
+        $pageDescription = "Вход в кабинет";
 
         require_once(ROOT . '/views/user/register.php');
 
@@ -84,6 +86,8 @@ class userController
             }
 
         }
+        $pageTitle = "Кабинет пользователя";
+        $pageDescription = "Упралвение покупками и данными";
 
         require_once(ROOT . '/views/user/login.php');
 

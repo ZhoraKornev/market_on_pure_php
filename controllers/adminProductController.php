@@ -75,6 +75,7 @@ class adminProductController extends adminBase
                             // Желаемая структура папок
                             $structure = "./upload/images/products/{$id}";
                             // Для создания вложенной структуры необходимо указать параметр
+
                             if (!mkdir($structure, 0777, true)) {
                                 print_r($structure);
                                 die('Не удалось создать директории...');
@@ -152,13 +153,22 @@ class adminProductController extends adminBase
                     // Желаемая структура папок
                     $structure = "./upload/images/products/{$id}";
                     // Для создания вложенной структуры необходимо указать параметр
-                    if (!mkdir($structure, 0777, true))
-                    {
-                        print_r($structure);
-                        die('Не удалось создать директории...');
+                    if (file_exists($structure)) {
+                        // Если загружалось, переместим его в нужную папке, дадим новое имя
+                        move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "{$structure}/product_450.jpg");
+                    } else {
+                        if (!mkdir($structure, 0777, true))
+                        {
+                            print_r($structure);
+                            die('Не удалось создать директории...');
+                        }
+                        else
+                        {
+                            // Если загружалось, переместим его в нужную папке, дадим новое имя
+                            move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "{$structure}/product_450.jpg");
+                        }
                     }
-                    // Если загружалось, переместим его в нужную папке, дадим новое имя
-                    move_uploaded_file($_FILES["image"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . "{$structure}/product_450.jpg");
+
                     //теперь нужно загружаемую картинку имзенить до размеров 450х450
                     // файл и новый размер
                     $fileNamePath = "{$structure}/product_450.jpg";

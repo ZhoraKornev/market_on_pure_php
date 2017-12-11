@@ -17,6 +17,8 @@ class cabinetController
         // Получаем информацию о пользователе из БД
         $user = user::getUserById($userId);
 
+        $pageTitle = "Кабинет";
+        $pageDescription = "Кабинет пользователя";
         require_once(ROOT . '/views/cabinet/index.php');
 
         return true;
@@ -54,7 +56,8 @@ class cabinetController
             }
 
         }
-
+        $pageTitle = "Кабинет";
+        $pageDescription = "Кабинет пользователя режим редактирования";
         require_once(ROOT . '/views/cabinet/edit.php');
 
         return true;

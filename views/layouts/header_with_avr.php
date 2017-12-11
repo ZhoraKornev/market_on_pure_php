@@ -26,7 +26,6 @@ if($pageRobots)
 </head>
 <body>
 <div class="wrapper">
-    . . .
 
 
 

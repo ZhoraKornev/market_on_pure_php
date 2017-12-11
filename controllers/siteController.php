@@ -15,10 +15,13 @@ class siteController
         $latestProducts = array();
         $latestProducts = product::getLatestProducts(6);
 
-        // Список товаров для слайдера
-        $sliderProducts = Product::getRecommendedProducts();
+        /*// Список товаров для слайдера
+        $sliderProducts = Product::getRecommendedProducts();*/
 
-        require_once (ROOT.'/views/main/index.php');
+        $pageTitle = "Главная";
+        $pageDescription = "Главная страница магазина";
+
+require_once (ROOT.'/views/main/index.php');
         return true;
     }
 
@@ -49,7 +52,8 @@ class siteController
             }
 
         }
-
+        $pageTitle = "Контакты";
+        $pageDescription = "Страница контактов магазина";
         require_once(ROOT . '/views/main/contact.php');
 
         return true;
@@ -57,12 +61,16 @@ class siteController
 
     public function actionBLog()
     {
+        $pageTitle = "Блог";
+        $pageDescription = "Страница блога";
         require_once(ROOT . '/views/blog/index.php');
         return true;
     }
 
     public function actionAbout()
     {
+        $pageTitle = "Про нас";
+        $pageDescription = "История успеха";
         require_once(ROOT . '/views/about/index.php');
         return true;
     }

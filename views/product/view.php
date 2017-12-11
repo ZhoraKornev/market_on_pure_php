@@ -42,7 +42,9 @@ include ROOT.'/views/layouts/header.php'?>
                             </div>
                             <div class="col-sm-7">
                                 <div class="product-information"><!--/product-information-->
+                                    <?php if ($product['is_new']): ?>
                                     <img src="/assets/img/home/new.jpg" class="newarrival" alt="" />
+                                    <?php endif; ?>
                                     <h2><?php echo $product['tittle'];?></h2>
                                     <p>Код товара: <?php echo $product['code'];?></p>
                                     <span>
@@ -57,8 +59,12 @@ include ROOT.'/views/layouts/header.php'?>
                                     <a href="/cart/add/<?php echo $product['id']; ?>" class="btn btn-default add-to-cart" data-id="<?php echo $product['id']; ?>"><i class="fa fa-shopping-cart"></i>В корзину</a>
                                 </span>
                                     <p><b>Наличие:</b> На складе</p>
-                                    <p><b>Состояние:</b> Новое</p>
-                                    <p><b>Производитель:</b> D&amp;G</p>
+                                    <p><b>Состояние:</b> <?php if ($product['is_new']): ?>
+                                        Новенькое поступление<br>
+                                        <?php else: ?>
+                                            В продаже<br>
+                                    <?php endif; ?></p>
+                                    <p><b>Производитель:</b><?php echo $product['brand'];?></p>
                                 </div><!--/product-information-->
                             </div>
                         </div>
