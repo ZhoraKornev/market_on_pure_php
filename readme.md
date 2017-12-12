@@ -40,6 +40,7 @@
 ![Главная страница магаизна](https://screenshots.firefoxusercontent.com/images/ec1a2b6f-7bb2-414a-abea-64fbb3f3ef85.png)
 
 [Видео про данный проект и работу маршрутизации](https://youtu.be/AVpCHPMhmsA)
+[Видео про рабботу с изображениями в данном проекте](https://www.youtube.com/watch?v=X6BpvPH0Z6Y)
 
 > За визуальную основу взят шаблон Word Press [e-commerce](https://wordpress.org/themes/e-commerce/)
   также в качестве приемлемой визуальной составляющей использован  [Bootstrap 4](http://getbootstrap.com/) использованы шрифты [FontAwesome](http://fontawesome.io/) и самописные стили в Main.CSS
