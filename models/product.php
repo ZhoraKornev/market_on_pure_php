@@ -272,7 +272,8 @@ class product
                 description = :description, 
                 is_new = :is_new, 
                 is_recommended = :is_recommended, 
-                status = :status
+                status = :status,
+                categories  = :categories 
             WHERE id = :id";
 
         // Получение и возврат результатов. Используется подготовленный запрос
@@ -289,6 +290,7 @@ class product
         $result->bindParam(':is_new', $options['is_new'], PDO::PARAM_INT);
         $result->bindParam(':is_recommended', $options['is_recommended'], PDO::PARAM_INT);
         $result->bindParam(':status', $options['status'], PDO::PARAM_INT);
+        $result->bindParam(':categories', $options['categories'], PDO::PARAM_INT);
         return $result->execute();
     }
 
@@ -399,7 +401,7 @@ class product
     }
 
     /**
-     * Возвращает путь к изображению 250x250 px
+     * Возвращает путь к изображению 450x450 px
      * @param integer $id
      * @return string <p>Путь к изображению</p>
      */

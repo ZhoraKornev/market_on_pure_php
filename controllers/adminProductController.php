@@ -153,6 +153,7 @@ class adminProductController extends adminBase
             $options['price'] = $_POST['price'];
             $options['price_new'] = $_POST['price_new'];
             $options['category_id'] = $_POST['category_id'];
+            $options['categories'] = json_encode($_POST['categories']);
             $options['brand'] = $_POST['brand'];
             $options['availability'] = $_POST['availability'];
             $options['description'] = $_POST['description'];
@@ -160,7 +161,7 @@ class adminProductController extends adminBase
             $options['is_recommended'] = $_POST['is_recommended'];
             $options['status'] = $_POST['status'];
 
-            print_r($_POST);
+            //print_r($_POST);
 
             // Сохраняем изменения
             if (product::updateProductById($id, $options)) {

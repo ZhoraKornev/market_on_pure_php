@@ -65,6 +65,18 @@ include ROOT.'/views/layouts/header.php'?>
                                             В продаже<br>
                                     <?php endif; ?></p>
                                     <p><b>Производитель:</b><?php echo $product['brand'];?></p>
+                                    <?php if (is_array($product['categories'])):
+                                        echo "<p><b>Этот товар также входит в категории: </b></p> ";?>
+
+                                        <?php foreach ($product['categories'] as $category): ?>
+                                        <a href="/alias/c<?php echo $category; ?>"> <?php echo category::getCategoryText($category); ?> </a>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+
+
+
+
+
                                 </div><!--/product-information-->
                             </div>
                         </div>

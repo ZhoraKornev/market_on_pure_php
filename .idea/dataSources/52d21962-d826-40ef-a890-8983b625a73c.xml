@@ -98,81 +98,94 @@
     </key>
     <column id="32" parent="16" name="id">
       <Position>1</Position>
+      <Comment>Индентификатор товара</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="33" parent="16" name="tittle">
       <Position>2</Position>
+      <Comment>Название товара</Comment>
       <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="34" parent="16" name="category_id">
       <Position>3</Position>
+      <Comment>Категории товара//Их может быть несколько</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="35" parent="16" name="code">
       <Position>4</Position>
+      <Comment>Код товара</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="36" parent="16" name="price">
       <Position>5</Position>
+      <Comment>Цена товара</Comment>
       <DataType>float|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="37" parent="16" name="price_new">
       <Position>6</Position>
+      <Comment>Акционная цена</Comment>
       <DataType>float|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="38" parent="16" name="availability">
       <Position>7</Position>
+      <Comment>Доступность товара</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="39" parent="16" name="brand">
       <Position>8</Position>
+      <Comment>Бренд или марка которой принадлежит товар</Comment>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="40" parent="16" name="description">
       <Position>9</Position>
+      <Comment>Полное описание товара</Comment>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="41" parent="16" name="is_new">
       <Position>10</Position>
+      <Comment>Отвечает за поялвение ярлыка NEW на изображении товара</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
     <column id="42" parent="16" name="is_recommended">
       <Position>11</Position>
+      <Comment>Отвечает за поялвение в разделе рекомендованных</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
     <column id="43" parent="16" name="status">
       <Position>12</Position>
+      <Comment>Отображать товар в списках или нет</Comment>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
     </column>
-    <column id="44" parent="16" name="image">
+    <column id="44" parent="16" name="breadcrumbs">
       <Position>13</Position>
+      <Comment>Хлебные крошки для СЕО</Comment>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="45" parent="16" name="breadcrumbs">
+    <column id="45" parent="16" name="metatags">
       <Position>14</Position>
+      <Comment>Метатеги для подстановки в шапку сайта</Comment>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="46" parent="16" name="metatags">
+    <column id="46" parent="16" name="categories">
       <Position>15</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <key id="47" parent="16" name="PRIMARY">
