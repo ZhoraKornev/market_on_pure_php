@@ -39,8 +39,8 @@
 
 ![Главная страница магаизна](https://screenshots.firefoxusercontent.com/images/ec1a2b6f-7bb2-414a-abea-64fbb3f3ef85.png)
 
-[Видео про работу маршрутизации](https://youtu.be/AVpCHPMhmsA)
-[Видео про рабботу с изображениями в данном проекте](https://www.youtube.com/watch?v=X6BpvPH0Z6Y)
+   [Видео про работу маршрутизации](https://youtu.be/AVpCHPMhmsA)
+   [Видео про рабботу с изображениями в данном проекте](https://www.youtube.com/watch?v=X6BpvPH0Z6Y)
 
 > За визуальную основу взят шаблон Word Press [e-commerce](https://wordpress.org/themes/e-commerce/)
   также в качестве приемлемой визуальной составляющей использован  [Bootstrap 4](http://getbootstrap.com/) использованы шрифты [FontAwesome](http://fontawesome.io/) и самописные стили в Main.CSS
@@ -49,7 +49,7 @@
 
 •	У одного товара необходимо предусмотреть следующие размеры изображений 110х110, 250х250, 450х450
 
-Вызов просмотра изображений разного размера реализован в классе product::РазмерИзображения(['id'] продутка).
+   Вызов просмотра изображений разного размера реализован в классе product::РазмерИзображения(['id'] продутка).
 Загрузка изображений происходит в adminProductController функция actionUpdate($id) и actionCreate().
 При редактировании или создании продукта можно загрузить один файл изображение который будет автоматически изменен до разера
 450х450,затем до 250х250 и 110х110.
@@ -60,8 +60,8 @@
 •	Роутинг должен быть реализован в виде:
     Domen/alias/c<id> - Категория товаров
     Domen/alias/p<id> - Товар
-    Маршрутизация в каталоге реализована в классе router,а шаблоны запросов и саму маршрутизацию можно прописть в файле config/routes.php
-
+    -Маршрутизация в каталоге реализована в классе router,а шаблоны запросов и саму маршрутизацию можно прописть в файле config/routes.php
+   [Видео про работу маршрутизации](https://youtu.be/AVpCHPMhmsA)
 
 •	На всех страницах должны присутствовать необходимые meta-tags
 •	Должны быть реализованы хлебные крошки в микроформате
@@ -89,7 +89,12 @@ http://wezom.test/admin
 
 -одного товара может быть более одного родителя.
     За это отвечает поле categories в таблице товаров.
-![screenshot of sample](https://screenshots.firefoxusercontent.com/images/10fb1554-cee4-4b32-986c-fb5dc5892894.png)
+    Назанчить несколько родителей можно в панели администрирования после создания товара.
+![screenshot of sample](https://screenshots.firefoxusercontent.com/images/d0667b7e-a206-41ae-bcd4-edf7743aa3c8.png)
+
+Вот так выглядит отображение нескольких категорий на товаре 
+
+![screenshot of sample](https://screenshots.firefoxusercontent.com/images/d0038a9c-7da9-4ed2-b260-364aecfe1e6b.png)
 
 
 
