@@ -168,4 +168,29 @@ class category
         return $result->execute();
     }
 
+    public function saveCategories($categories) {
+
+        // Соединение с БД
+        $db = db::getConnection();
+
+        // Текст запроса к БД
+        $sql = 'INSERT INTO products (categories) '
+            . 'VALUES (:categories) WHERE id =:id';
+
+        $products = json_encode($categories);
+
+        $result = $db->prepare($sql);
+        $result->bindParam(':categories', $products, PDO::PARAM_STR);
+
+        return $result->execute();
+
+
+    }
+
+
+
+
+
+
+
 }

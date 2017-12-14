@@ -75,5 +75,12 @@ require_once (ROOT.'/views/main/index.php');
         return true;
     }
 
+/*    public function actionTest() {
+
+        $pageTitle = "Про нас";
+        $pageDescription = "История успеха";
+        require_once(ROOT . '/views/test.php');
+        return true;
+    }*/
 
 }

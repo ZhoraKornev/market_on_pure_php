@@ -160,6 +160,8 @@ class adminProductController extends adminBase
             $options['is_recommended'] = $_POST['is_recommended'];
             $options['status'] = $_POST['status'];
 
+            print_r($_POST);
+
             // Сохраняем изменения
             if (product::updateProductById($id, $options)) {
 
