@@ -41,7 +41,7 @@
 
    [Видео про работу маршрутизации](https://youtu.be/AVpCHPMhmsA)
    [Видео про рабботу с изображениями в данном проекте](https://www.youtube.com/watch?v=X6BpvPH0Z6Y)
-   [которкая видео презентация без звука](https://youtu.be/1t7HjcdJ4mM)
+   [короткая видео презентация без звука](https://youtu.be/1t7HjcdJ4mM)
 
 > За визуальную основу взят шаблон Word Press [e-commerce](https://wordpress.org/themes/e-commerce/)
   также в качестве приемлемой визуальной составляющей использован  [Bootstrap 4](http://getbootstrap.com/) использованы шрифты [FontAwesome](http://fontawesome.io/) и самописные стили в Main.CSS
